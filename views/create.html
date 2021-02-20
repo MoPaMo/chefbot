@@ -22,33 +22,33 @@
       color="#ff8a01"
     />
     <!-- import the webpage's stylesheet -->
-    <link
-      rel="stylesheet"
-      href="../public/tailwind.min.css"
-    />
+    <link rel="stylesheet" href="../public/tailwind.min.css" />
   </head>
   <body>
-    <header>
-      <h1>
-        A Dream of the Future
-      </h1>
-    </header>
 
-    <main >
-<ul>
-    <li>Hi</li>
-    <li>You</li>
-</ul>
 
+    <main class="p-10">
+      <div id="sort-app" class="cursor-move">
+        <div>Hi <button onclick="alert('hi')">c</button></div>
+        <div>You</div>
+      </div>
+      <ul>
+          <li>hi</li>
+          <li>another one</li>
+          <li>one</li>
+      </ul>
     </main>
 
-    <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
 
     <!-- import the webpage's client-side javascript file ->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script-->
-    <script
-      src="../public/sortable.min.js"
-    ></script>
+    <script src="../public/sortable.min.js"></script>
     <script src="../public/create.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.11/lib/swappable.js"></script>
+<script>
+    const swappable = new Swappable.default(document.querySelectorAll('ul'), {
+      draggable: 'li'
+    });
+</script>
   </body>
 </html>
