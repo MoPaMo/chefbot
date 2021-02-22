@@ -19,8 +19,8 @@
       <div class="wrapper">
         <div class="container" v-dragula="colOne" bag="first-bag">
           <!-- with click -->
-          <div v-for="text in colOne" class="odd:bg-blue-500 bg-blue-600">
-            {{text}} <span @click="onClick">[click me]</span>
+          <div v-for="text,i in colOne" class="odd:bg-blue-500 bg-blue-600">
+            {{text}} <span @click="remove(i)">[click me]</span>
           </div>
         </div>
       </div>

@@ -14,5 +14,8 @@ let vm = new Vue({
         this.addtext = "";
       }
     },
+    remove:function(i){
+        alert(i)
+    }
   },
 });
