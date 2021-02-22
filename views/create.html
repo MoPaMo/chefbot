@@ -7,42 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="A cool thing made with Glitch" />
-
+    <noscript>
+      <meta http-equiv="Refresh" content="0; url='./'">
+    </noscript>
     <title>Welcome to Glitch!</title>
     <!--https://cdn.glitch.com/03217379-17a4-42b3-aa4f-d26c06984be0%2Flogo.svg?v=1613583428258-->
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="https://cdn.glitch.com/03217379-17a4-42b3-aa4f-d26c06984be0%2Flogo.svg?v=1613583428258"
-    />
-    <link rel="alternate icon" href="/favicon.ico" />
-    <link
-      rel="mask-icon"
-      href="https://cdn.glitch.com/03217379-17a4-42b3-aa4f-d26c06984be0%2Flogo.svg?v=1613583428258"
-      color="#ff8a01"
-    />
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="../public/tailwind.min.css" />
+ <link rel="stylesheet" href="../public/dragula.min.css">
+ <link rel="stylesheet" href="../public/tailwind.min.css">
   </head>
   <body>
 
-
-    <main class="p-10">
-      <div id="sort-app" class="cursor-move">
-        <div class="flex justify-around bg-green-100 justify-items-start">
-            <div class="bg-green-400">1</div>
-            <div class="bg-green-400">2</div>
-            <div class="bg-green-400">3</div>
-          </div>
-        <div>You</div>
+    <div id="wrapper">
+      <div class="wrapper">
+        <div class="container" v-dragula="colOne" bag="first-bag">
+          <!-- with click -->
+          <div v-for="text in colOne" class="odd:bg-blue-500 bg-blue-600">{{text}} <span  @click="onClick">[click me]</span></div>
+        </div>
       </div>
-      
-
-
-    <!-- import the webpage's client-side javascript file ->
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script-->
-    <script src="../public/sortable.min.js"></script>
+      <div ><input v-model="addtext" type="text"><button @click="write">write</button></div>
+    </div>
+    <script src="../public/vue.min.js"></script>
+    <script src="../public/vue-dragula.min.js"></script>
     <script src="../public/create.js"></script>
-
   </body>
 </html>
