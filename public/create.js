@@ -1,7 +1,18 @@
-const sortable = new Sortable.default(document.querySelectorAll('#sort-app'), {
-    draggable: 'div'
-  });
-  sortable.on('sortable:start', () => console.log('sortable:start'));
-sortable.on('sortable:sort', () => console.log('sortable:sort'));
-sortable.on('sortable:sorted', () => console.log('sortable:sorted'));
-sortable.on('sortable:stop', () => console.log('sortable:stop'));
+let vm = new Vue({
+  el: "#wrapper",
+  data: {
+    colOne: ["hi", "you"],
+    addtext: "",
+  },
+  methods: {
+    onClick: function () {
+      alert();
+    },
+    write: function () {
+      if (trim(this.colOne) != "") {
+        this.colOne.push(this.addtext);
+        this.addtext = "";
+      }
+    },
+  },
+});
