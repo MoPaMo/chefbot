@@ -9,7 +9,7 @@ let vm = new Vue({
       alert();
     },
     write: function () {
-      if (trim(this.colOne) != "") {
+      if (this.colOne.trim() != "") {
         this.colOne.push(this.addtext);
         this.addtext = "";
       }
