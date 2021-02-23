@@ -8,29 +8,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="A cool thing made with Glitch" />
     <noscript>
-      <meta http-equiv="Refresh" content="0; url='./'" />
+      <meta http-equiv="Refresh" content="0; url='/accessible/create.html'" />
     </noscript>
     <title>New recipe | formulator | chefbot</title>
     <link rel="stylesheet" href="../public/dragula.min.css" />
     <link rel="stylesheet" href="../public/tailwind.min.css" />
   </head>
-  <body class=" dark:bg-blue-900 bg-blue-50">
+  <body class="dark:bg-blue-900 bg-blue-50">
     <div id="app">
       <div class="wrapper">
-        <input type="text" v-model="name">
+        <input type="text" v-model="name" />
         <div class="container" v-dragula="colOne" bag="first-bag">
           <!-- with click -->
-          <div v-for="text,i in colOne" class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-blue-200 bg-blue-300">
+          <div
+            v-for="text,i in colOne"
+            class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-blue-200 bg-blue-300"
+          >
             {{text}} <span @click="remove(i)">[click me]</span>
           </div>
         </div>
         <div>
-          <textarea v-model="addtext" type="text"></textarea><button @click="write">
-            write
-          </button>
+          <textarea v-model="addtext" type="text"></textarea
+          ><button @click="write">write</button>
         </div>
       </div>
-
     </div>
     <script src="../public/vue.min.js"></script>
     <script src="../public/vue-dragula.min.js"></script>
