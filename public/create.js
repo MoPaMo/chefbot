@@ -1,8 +1,10 @@
 let vm = new Vue({
-  el: "#wrapper",
+  el: "#app",
+  
   data: {
     colOne: ["hi", "you"],
     addtext: "",
+    name:"New Recipe"
   },
   methods: {
     onClick: function () {
@@ -18,4 +20,9 @@ let vm = new Vue({
         alert(i)
     }
   },
+  watch:{
+      name:function(){
+          document.title=this.name+" | formulator | chefbot"
+      }
+  }
 });
