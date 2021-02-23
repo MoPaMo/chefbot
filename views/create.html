@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="../public/dragula.min.css" />
     <link rel="stylesheet" href="../public/tailwind.min.css" />
   </head>
-  <body>
+  <body class=" dark:bg-blue-900 bg-blue-50">
     <div id="wrapper">
       <div class="wrapper">
         <div class="container" v-dragula="colOne" bag="first-bag">
           <!-- with click -->
-          <div v-for="text,i in colOne" class="odd:bg-blue-500 bg-blue-600">
+          <div v-for="text,i in colOne" class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-blue-200 bg-blue-300">
             {{text}} <span @click="remove(i)">[click me]</span>
           </div>
         </div>
