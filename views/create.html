@@ -13,8 +13,25 @@
     <title>New recipe | formulator | chefbot</title>
     <link rel="stylesheet" href="../public/dragula.min.css" />
     <link rel="stylesheet" href="../public/tailwind.min.css" />
+    <style>
+      .skip a {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .skip a:focus {
+        position: static;
+        width: auto;
+        height: auto;
+      }
+    </style>
   </head>
   <body class="dark:bg-blue-900 bg-blue-50">
+    <nav class="bg-gray-200 dark:bg-gray-800 p-4 grid sm:grid-cols-5 text-lg sticky top-0"><a class="sm:col-span-4">chefbot</a><a class="hidden sm:block text-sm">myProfile</a> </nav>
+    <div class="skip"><a href="/accessible/create.html">Go over to accessible page</a></div>
     <div id="app">
       <div class="wrapper">
         <input type="text" v-model="name" />
@@ -22,7 +39,7 @@
           <!-- with click -->
           <div
             v-for="text,i in colOne"
-            class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-blue-200 bg-blue-300"
+            class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-gray-300 bg-gray-400"
           >
             {{text}} <span @click="remove(i)">[click me]</span>
           </div>
