@@ -39,6 +39,6 @@ let vm = new Vue({
       }
   },
   mounted:function(){
-    this.loadfinish=true
+   // this.loadfinish=true
   }
 });
