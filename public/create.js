@@ -2,9 +2,10 @@ let vm = new Vue({
   el: "#app",
   
   data: {
-    colOne: ["hi", "you"],
+    colOne: [],
     addtext: "",
-    name:"New Recipe"
+    name:"New Recipe",
+    list:""
   },
   methods: {
     onClick: function () {
@@ -18,6 +19,9 @@ let vm = new Vue({
     },
     remove:function(i){
         alert(i)
+    },
+    finish:function(){
+
     }
   },
   watch:{

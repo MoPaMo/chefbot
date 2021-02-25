@@ -33,20 +33,24 @@
     <nav class="bg-gray-200 dark:bg-gray-800 p-4 grid sm:grid-cols-5 text-lg sticky top-0"><a class="sm:col-span-4">chefbot</a><a class="hidden sm:block text-sm">myProfile</a> </nav>
     <div class="skip"><a href="/accessible/create.html">Go over to accessible page</a></div>
     <div id="app">
-      <div class="wrapper">
-        <input type="text" v-model="name" />
-        <div class="container" v-dragula="colOne" bag="first-bag">
+      <div class="wrapper p-2">
+        <input type="text" class="p-1 text-lg" v-model="name" id="name"/><label for="name" >hi</label>
+        <div v-if="colOne.length!=0" class="container bg-gray-200" v-dragula="colOne" bag="first-bag">
           <!-- with click -->
           <div
             v-for="text,i in colOne"
-            class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-gray-300 bg-gray-400"
+            class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-gray-300 bg-gray-400 p-2"
           >
             {{text}} <span @click="remove(i)">[click me]</span>
           </div>
         </div>
+        <div v-else class="p-2 text-xl bg-gray-200">Nothing here…</div>
         <div>
           <textarea v-model="addtext" type="text"></textarea
           ><button @click="write">write</button>
+        </div>
+        <div >
+          <textarea v-model="list" type="text" placeholder="Ingridients" id="list"></textarea> 
         </div>
       </div>
     </div>
