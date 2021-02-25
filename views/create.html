@@ -44,7 +44,7 @@
             {{text}} <span @click="remove(i)">[click me]</span>
           </div>
         </div>
-        <div v-else class="p-2 text-xl bg-gray-200">Nothing here…</div>
+        <div v-else class="p-2 text-xl bg-gray-200">Nothing here yet…<br/><sub>(Add steps below)</sub></div>
         <div>
           <textarea v-model="addtext" type="text"></textarea
           ><button @click="write">write</button>
@@ -54,6 +54,7 @@
         </div>
         <button-counter></button-counter>
       </div>
+      <div v-if="!loadfinish">Loading Formulator<br/>Please wait a second…</div>
     </div>
     <script src="../public/vue.min.js"></script>
     <script src="../public/vue-dragula.min.js"></script>

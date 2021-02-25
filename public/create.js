@@ -1,15 +1,16 @@
-Vue.component('button-counter', {
+Vue.component('delete', {
   data: function () {
     return {
       count: 0
     }
   },
-  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+  template: ''
 })
 let vm = new Vue({
   el: "#app",
   
   data: {
+    loadfinish:false,
     colOne: [],
     addtext: "",
     name:"New Recipe",
@@ -36,5 +37,8 @@ let vm = new Vue({
       name:function(){
           document.title=this.name+" | formulator | chefbot"
       }
+  },
+  mounted:function(){
+    this.loadfinish=true
   }
 });
