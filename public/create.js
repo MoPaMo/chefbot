@@ -1,20 +1,20 @@
-Vue.component('delete', {
+Vue.component("delete", {
   data: function () {
     return {
-      count: 0
-    }
+      count: 0,
+    };
   },
-  template: ''
-})
+  template: "",
+});
 let vm = new Vue({
   el: "#app",
-  
+
   data: {
-    loadfinish:false,
+    loadfinish: false,
     colOne: [],
     addtext: "",
-    name:"New Recipe",
-    list:""
+    name: "New Recipe",
+    list: "",
   },
   methods: {
     onClick: function () {
@@ -26,19 +26,17 @@ let vm = new Vue({
         this.addtext = "";
       }
     },
-    remove:function(i){
-        alert(i)
+    remove: function (i) {
+      alert(i);
     },
-    finish:function(){
-
-    }
+    finish: function () {},
   },
-  watch:{
-      name:function(){
-          document.title=this.name+" | formulator | chefbot"
-      }
+  watch: {
+    name: function () {
+      document.title = this.name + " | formulator | chefbot";
+    },
   },
-  mounted:function(){
-   // this.loadfinish=true
-  }
+  mounted: function () {
+    this.loadfinish = true;
+  },
 });
