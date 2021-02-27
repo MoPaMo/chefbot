@@ -14,7 +14,7 @@ let vm = new Vue({
     colOne: [],
     addtext: "",
     name: "New Recipe",
-    list: "",
+    list:[],
   },
   methods: {
     onClick: function () {

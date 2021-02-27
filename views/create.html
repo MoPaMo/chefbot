@@ -27,9 +27,13 @@
         width: auto;
         height: auto;
       }
+      .addpointgrid{
+        display:grid;
+        grid-template-columns: auto 10rem;
+      }
     </style>
   </head>
-  <body class="dark:bg-blue-900 bg-blue-50">
+  <body class="dark:bg-blue-900">
     <nav
       class="bg-gray-200 dark:bg-gray-800 p-4 grid sm:grid-cols-5 text-lg sticky top-0"
     >
@@ -51,36 +55,43 @@
       <div class="wrapper p-2">
         <input type="text" class="p-1 text-lg" v-model="name" id="name" /><label
           for="name"
-          >hi</label
+          >Name</label
         >
-        <div
-          v-if="colOne.length!=0"
-          class="container bg-gray-200"
-          v-dragula="colOne"
-          bag="first-bag"
-        >
-          <!-- with click -->
+        <div class="divide-y-4">
           <div
-            v-for="text,i in colOne"
-            class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-gray-300 bg-gray-400 p-2"
+            v-if="colOne.length!=0"
+            class="container bg-gray-200"
+            v-dragula="colOne"
+            bag="first-bag"
           >
-            {{text}} <span @click="remove(i)">[click me]</span>
+            <!-- with click -->
+            <div
+              v-for="text,i in colOne"
+              class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-gray-300 bg-gray-400 p-2"
+            >
+              {{text}} <span @click="remove(i)"></span>
+            </div>
+          </div>
+          <div v-else class="p-2 text-xl bg-gray-200">
+            Nothing here yet…<br /><sub>(Add steps below)</sub>
+          </div>
+          <div class="addpointgrid">
+            <input
+              v-model="addtext"
+              type="text"
+              class="rounded-lg bg-opacity-25 bg-gray-200 p-2"
+            />
+            <button @click="write">write</button>
           </div>
         </div>
-        <div v-else class="p-2 text-xl bg-gray-200">
-          Nothing here yet…<br /><sub>(Add steps below)</sub>
-        </div>
         <div>
-          <textarea v-model="addtext" type="text"></textarea
-          ><button @click="write">write</button>
-        </div>
-        <div>
-          <textarea
+          <div v-for="ingr in list">{{ingr}}</div>
+          <input
             v-model="list"
             type="text"
             placeholder="Ingridients"
-            id="list"
-          ></textarea>
+            @keydown.enter
+          />
         </div>
       </div>
     </div>
