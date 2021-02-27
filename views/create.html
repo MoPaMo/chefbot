@@ -80,6 +80,7 @@
             v-model="addtext"
             type="text"
             class="rounded-lg bg-opacity-25 bg-gray-200 p-2"
+            @keydown.enter="write"
           />
           <button @click="write">write</button>
         </div>
