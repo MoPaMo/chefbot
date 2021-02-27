@@ -14,18 +14,18 @@
     <link rel="stylesheet" href="../public/dragula.min.css" />
     <link rel="stylesheet" href="../public/tailwind.min.css" />
     <style>
-      .skip a {
+      .skip-link {
         position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
+        top: -40px;
+        left: 0;
+        background: #000000;
+        color: white;
+        padding: 8px;
+        z-index: 100;
       }
-      .skip a:focus {
-        position: static;
-        width: auto;
-        height: auto;
+
+      .skip-link:focus {
+        top: 0;
       }
       .addpointgrid {
         display: grid;
@@ -40,10 +40,10 @@
       <a class="sm:col-span-4">chefbot</a
       ><a class="hidden sm:block text-sm">myProfile</a>
     </nav>
-    <div class="skip">
-      <a href="/accessible/create.html">Go over to accessible page</a>
-    </div>
-    <div id="app">
+    <a class="skip-link" href="/accessible/create.html"
+      >Go over to accessible page</a
+    >
+    <main id="app">
       <div
         v-if="!loadfinish"
         class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none"
@@ -100,7 +100,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </main>
     <script src="../public/vue.min.js"></script>
     <script src="../public/vue-dragula.min.js"></script>
     <script src="../public/create.js"></script>
