@@ -46,18 +46,18 @@
     <main id="app" class="p-2">
       <div
         v-if="!loadfinish"
-        class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none"
+        class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none z-40"
       >
         <div class="text-lg">Loading Formulator</div>
         <br />Please wait a second…
       </div>
       <section>
-        <h1 class="text-xl">Name</h1>
+        <h1 class="text-2xl">Name</h1>
         <input type="text" class="p-1 text-lg" v-model="name" id="name" />
       </section>
 
       <section class="mb-2 mt-2">
-        <h2 class="text-xl">Steps</h2>
+        <h2 class="text-2xl">Steps</h2>
         <div
           v-if="colOne.length!=0"
           class="container bg-gray-200"
@@ -69,10 +69,10 @@
             v-for="text,i in colOne"
             class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-gray-300 bg-gray-400 p-2"
           >
-            {{text}} <span @click="remove(i)"></span>
+            {{text}} <move ></move><span @click="remove(i)"></span>
           </div>
         </div>
-        <div v-else class="p-2 text-xl bg-gray-200">
+        <div v-else class="p-2 text-lg bg-gray-200">
           Nothing here yet…<br /><sub>(Add steps below)</sub>
         </div>
         <div class="addpointgrid">
@@ -86,9 +86,9 @@
       </section>
       <hr />
       <section class="mb-2 mt-2">
-        <h2 class="text-xl">Ingredients</h2>
+        <h2 class="text-2xl">Ingredients</h2>
         <div v-if="list.length"><div v-for="ingr in list">{{ingr}}</div></div>
-        <div v-else class="p-2 text-xl bg-gray-200">
+        <div v-else class="p-2 text-lg bg-gray-200">
           Nothing here yet…<br /><sub>(Add steps below)</sub>
         </div>
         <div class="addpointgrid">
