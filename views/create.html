@@ -27,8 +27,8 @@
         width: auto;
         height: auto;
       }
-      .addpointgrid{
-        display:grid;
+      .addpointgrid {
+        display: grid;
         grid-template-columns: auto 10rem;
       }
     </style>
@@ -85,13 +85,19 @@
           </div>
         </div>
         <div>
-          <div v-for="ingr in list">{{ingr}}</div>
-          <input
-            v-model="list"
-            type="text"
-            placeholder="Ingridients"
-            @keydown.enter
-          />
+          <div v-if="list.length"><div v-for="ingr in list">{{ingr}}</div></div>
+          <div v-else class="p-2 text-xl bg-gray-200">
+            Nothing here yet…<br /><sub>(Add steps below)</sub>
+          </div>
+          <div class="addpointgrid">
+            <input
+              v-model="listin"
+              type="text"
+              placeholder="Ingridients"
+              @keydown.enter="if(listin.trim())list.push(listin)"
+            />
+            <button @click="if(listin.trim())list.push(listin)">add</button>
+          </div>
         </div>
       </div>
     </div>
