@@ -27,14 +27,14 @@ db.serialize(() => {
     db.run(
       "CREATE TABLE recipe (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name varchar(255) NOT NULL, steps text NOt NULL, created datetime DEFAULT CURRENT_TIMESTAMP, time int NOT NULL, rating_all text NOT NULL DEFAULT \"[]\", rating float not null default 0, ratings int not null);"
     );
-    console.log("New table Dreams created!");
+    console.log("New table \"recipes\" created!");
 
     // insert default dreams
     db.serialize(() => {
 
     });
   } else {
-    console.log('Database "Dreams" ready to go!');
+    console.log('DB ready to go!');
     db.each("SELECT * from Dreams", (err, row) => {
       if (row) {
         console.log(`record: ${row.dream}`);
