@@ -31,6 +31,12 @@
         display: grid;
         grid-template-columns: auto 10rem;
       }
+      .stepgrid {
+        display: grid;
+        grid-template-columns: auto 1em 1em 1em;
+        width: 100%;
+        gap: 1em;
+      }
     </style>
   </head>
   <body class="dark:bg-blue-900">
@@ -58,31 +64,32 @@
 
       <section class="mb-2 mt-2">
         <h2 class="text-2xl">Steps</h2>
-        <div
+        <ul
           v-if="colOne.length!=0"
           class="container bg-gray-200"
           v-dragula="colOne"
           bag="first-bag"
         >
           <!-- with click -->
-          <div
+          <li
             v-for="text,i in colOne"
-            class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-gray-300 bg-gray-400 p-2"
+            class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-gray-300 bg-gray-400 p-2 stepgrid"
           >
-            {{text}} <move></move><span @click="remove(i)"></span>
-          </div>
-        </div>
+            {{text}} <edit></edit><trash @click.native="remove(i)"></trash>
+            <move></move>
+          </li>
+        </ul>
         <div v-else class="p-2 text-lg bg-gray-200">
           Nothing here yet…<br /><sub>(Add steps below)</sub>
         </div>
-        <div class="addpointgrid">
+        <div class="addpointgrid mt-2">
           <input
             v-model="addtext"
             type="text"
             class="rounded-lg bg-opacity-25 bg-gray-200 p-2"
             @keydown.enter="write"
           />
-          <button @click="write">write</button>
+          <button @click="write"><plus></plus></button>
         </div>
       </section>
       <hr />
@@ -100,7 +107,7 @@
             placeholder="Ingridients"
             @keydown.enter="if(listin.trim())list.push(listin)"
           />
-          <button @click="if(listin.trim())list.push(listin)">add</button>
+          <button @click="if(listin.trim())list.push(listin)" class="place-self-center w-full"><plus class="place-self-center"></plus></button>
         </div>
       </section>
       <!--/div-->
