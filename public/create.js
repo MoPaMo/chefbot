@@ -30,7 +30,7 @@ let vm = new Vue({
     },
     write: function () {
       if (this.addtext.trim() != "") {
-        this.colOne.push(this.addtext);
+        this.colOne.push({text:this.addtext, id:this.colOne.length});
         this.addtext = "";
       }
     },

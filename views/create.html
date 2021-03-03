@@ -72,10 +72,10 @@
         >
           <!-- with click -->
           <li
-            v-for="text,i in colOne"
+            v-for="item,i in colOne"
             class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-gray-300 bg-gray-400 p-2 stepgrid"
           >
-            {{text}} <edit></edit><trash @click.native="remove(i)"></trash>
+            {{item.text}} <edit></edit><trash @click.native="remove(item)"></trash>
             <move></move>
           </li>
         </ul>
