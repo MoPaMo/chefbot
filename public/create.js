@@ -35,7 +35,7 @@ let vm = new Vue({
       }
     },
     remove: function (i) {
-      alert(i);
+      this.colOne.splice(i, 1)
     },
     finish: function () {},
   },
