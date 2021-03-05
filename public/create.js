@@ -28,17 +28,15 @@ let vm = new Vue({
     onClick: function () {
       alert();
     },
-    getNum:function(){
-      return Math.floor(Math.random()*1000000000)
-    },
+ 
     write: function () {
       if (this.addtext.trim() != "") {
-        this.colOne.push({text:this.addtext, id:this.getNum()});
+        this.colOne.push({text:this.addtext});
         this.addtext = "";
       }
     },
     remove: function (i) {
-      this.colOne =this.colOne.filter(el=>el.id!=i)
+      
       
     },
     finish: function () {},
