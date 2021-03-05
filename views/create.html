@@ -11,7 +11,6 @@
       <meta http-equiv="Refresh" content="0; url='/accessible/create.html'" />
     </noscript>
     <title>New recipe | formulator | chefbot</title>
-    <link rel="stylesheet" href="../public/dragula.min.css" />
     <link rel="stylesheet" href="../public/tailwind.min.css" />
     <style>
       .skip-link {
@@ -71,8 +70,6 @@
         <ul
           v-if="colOne.length!=0"
           class="container bg-gray-200"
-          v-dragula="colOne"
-          bag="first-bag"
         >
           <!-- with click -->
           <li
@@ -117,7 +114,6 @@
       <!--/div-->
     </main>
     <script src="../public/vue.min.js"></script>
-    <script src="../public/vue-dragula.min.js"></script>
     <script src="../public/create.js"></script>
   </body>
 </html>
