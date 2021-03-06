@@ -35,8 +35,8 @@ let vm = new Vue({
     },
     remove: function (i) {},
     send: function () {
+      if (this.name && this.colOne.length && this.author) {
       this.sending = true;
-      if (this.name && this.colOne && this.author) {
       }
     },
   },
