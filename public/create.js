@@ -22,14 +22,10 @@ let vm = new Vue({
     name: "New Recipe",
     list: [],
     listin: "",
-    colCountNum: 0,
     sending: false,
     author: "",
   },
   methods: {
-    onClick: function () {
-      alert();
-    },
 
     write: function () {
       if (this.addtext.trim() != "") {
