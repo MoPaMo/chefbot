@@ -22,31 +22,27 @@ let vm = new Vue({
     name: "New Recipe",
     list: [],
     listin: "",
-    colCountNum:0,
-    sending:false,
-    author:""
+    colCountNum: 0,
+    sending: false,
+    author: "",
   },
   methods: {
     onClick: function () {
       alert();
     },
- 
+
     write: function () {
       if (this.addtext.trim() != "") {
-        this.colOne.push({text:this.addtext});
+        this.colOne.push({ text: this.addtext });
         this.addtext = "";
       }
     },
-    remove: function (i) {
-      
-      
-    },
-    send:function(){
-      this.sending=true;
-      if(this.name&&this.colOne&&this.author){
-        
+    remove: function (i) {},
+    send: function () {
+      this.sending = true;
+      if (this.name && this.colOne && this.author) {
       }
-    }
+    },
   },
   watch: {
     name: function () {

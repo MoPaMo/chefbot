@@ -88,14 +88,19 @@
             class="rounded-lg bg-opacity-25 bg-gray-200 p-2"
             @keydown.enter="write"
           />
-          <button @click="write"  class="place-self-center w-full transition hover:text-green-600 focus:outline-none"><plus></plus></button>
+          <button
+            @click="write"
+            class="place-self-center w-full transition hover:text-green-600 focus:outline-none"
+          >
+            <plus></plus>
+          </button>
         </div>
       </section>
       <hr />
       <section class="mb-2 mt-2">
         <h2 class="text-2xl">Ingredients</h2>
         <div v-if="list.length"><div v-for="ingr in list">{{ingr}}</div></div>
-        <div v-else class="p-2 text-lg bg-gray-200 ">
+        <div v-else class="p-2 text-lg bg-gray-200">
           Nothing here yet…<br /><sub>(Add steps below)</sub>
         </div>
         <div class="addpointgrid">
@@ -117,25 +122,28 @@
       <section>
         <h2 class="text-2xl">Ready?</h2>
         <label for="aut">What's your name?</label>
-        <input type="text" v-model="author"
-        class="rounded-lg bg-opacity-25 bg-gray-200 p-2" id="aut">
-        <button @click="send" class="bg-blue-500 p-2 rounded">Finish & Send recipe</button>
+        <input
+          type="text"
+          v-model="author"
+          class="rounded-lg bg-opacity-25 bg-gray-200 p-2"
+          id="aut"
+        /><br />
+        <button @click="send" class="bg-blue-500 p-2 rounded">
+          Finish & Send recipe
+        </button>
       </section>
       <div
-      v-if="sending"
-      
-      class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none z-40"
-    >
-      <div class="text-lg">Uploading recipe…</div>
-      <br />Please wait a second, you'll be redirected to the new recipe soon…
-      <hr/>
-      <br/>Your steps:
-      <ul>
-        <li v-for="r in colOne">
-          {{r.text}}
-        </li>
-      </ul>
-    </div>
+        v-if="sending"
+        class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none z-40"
+      >
+        <div class="text-lg">Uploading recipe…</div>
+        <br />Please wait a second, you'll be redirected to the new recipe soon…
+        <hr />
+        <br />Your steps:
+        <ul>
+          <li v-for="r in colOne">{{r.text}}</li>
+        </ul>
+      </div>
       <!--/div-->
     </main>
     <script src="../public/vue.min.js"></script>
