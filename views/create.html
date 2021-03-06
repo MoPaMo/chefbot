@@ -60,6 +60,7 @@
         <div class="text-lg">Loading Formulator</div>
         <br />Please wait a second…
       </div>
+      <div v-if="loadfinish&&!sending">
       <section>
         <h1 class="text-2xl">Name</h1>
         <input type="text" class="p-1 text-lg" v-model="name" id="name" />
@@ -131,7 +132,7 @@
         <button @click="send" class="bg-blue-500 p-2 rounded">
           Finish & Send recipe
         </button>
-      </section>
+      </section></div>
       <div
         v-if="sending"
         class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none z-40"
