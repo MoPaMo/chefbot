@@ -54,12 +54,25 @@
     >
     <main id="app" class="p-2">
       <div
+      v-if="sending"
+      class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none z-20"
+    >
+      <div class="text-lg">Uploading recipe…</div>
+      <br />Please wait a second, you'll be redirected to the new recipe soon…
+      <hr />
+      <br />Your steps:
+      <ul>
+        <li v-for="r in colOne">{{r.text}}</li>
+      </ul>
+    </div>
+      <div
         v-if="!loadfinish"
         class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none z-40"
       >
         <div class="text-lg">Loading Formulator</div>
         <br />Please wait a second…
       </div>
+      
       <div v-if="loadfinish&&!sending">
       <section>
         <h1 class="text-2xl">Name</h1>
@@ -133,18 +146,7 @@
           Finish & Send recipe
         </button>
       </section></div>
-      <div
-        v-if="sending"
-        class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none z-40"
-      >
-        <div class="text-lg">Uploading recipe…</div>
-        <br />Please wait a second, you'll be redirected to the new recipe soon…
-        <hr />
-        <br />Your steps:
-        <ul>
-          <li v-for="r in colOne">{{r.text}}</li>
-        </ul>
-      </div>
+
       <!--/div-->
     </main>
     <script src="../public/vue.min.js"></script>
