@@ -1,24 +1,81 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg width="10cm" height="10cm" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<svg
+  width="10cm"
+  height="10cm"
+  version="1.1"
+  viewBox="0 0 100 100"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:cc="http://creativecommons.org/ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
  <metadata>
   <rdf:RDF>
    <cc:Work rdf:about="">
     <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title/>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    <dc:title />
    </cc:Work>
   </rdf:RDF>
  </metadata>
  <g transform="translate(0,-197)" stroke="#000">
-  <path d="m24.946 272.05h49.893" fill="none" stroke-width=".26458px"/>
-  <g fill="none">
-   <path transform="rotate(-68.079)" d="m-207.92 126.64a25.596 25.596 0 0 1 7.4968 18.099h-25.596z" stroke-linejoin="round" stroke-opacity=".98824" stroke-width=".33914" style="paint-order:normal"/>
-   <path transform="matrix(1.2798 0 0 1.2798 -13.959 -60.284)" d="m42.802 236.53c0.29698-5e-3 0.63194-0.0116 1.1125 0.14011 0.48061 0.15173 1.5259 0.72178 1.8209 0.43121 0.29499-0.29058 1.1981-1.4422 1.4922-1.3671 0.29405 0.0751 1.225 0.56648 1.3711 0.42752 0.14611-0.13895 0.45996-0.57726 0.80948-0.67605 0.34952-0.0988 0.93854-0.10781 1.3614-0.12142 0.42288-0.0136 0.79066-0.0364 1.0702-0.0392 0.27958-3e-3 0.62924 9e-3 1.0528 0.0342 0.42356 0.0252 1.0062 0.0703 1.3573 0.20603s0.68888 0.42487 0.9894 0.52292c0.30052 0.0981 0.65857 0.0925 0.91048 0.12922 0.25192 0.0367 0.52143 0.20381 0.59338 0.24841" stroke-width=".26458px"/>
-   <circle cx="47.368" cy="246.99" r="2.1609" stroke-linejoin="round" stroke-opacity=".98824" stroke-width=".33914" style="paint-order:normal"/>
-   <ellipse cx="53.445" cy="245.36" rx="2.2085" ry="2.0574" stroke-linejoin="round" stroke-opacity=".98824" stroke-width=".33455" style="paint-order:normal"/>
-   <circle cx="50.83" cy="252.57" r="2.1609" stroke-linejoin="round" stroke-opacity=".98824" stroke-width=".33914" style="paint-order:normal"/>
+    <defs>
+        <clipPath id="cut-off-bottom">
+            <rect
+          x="10.961"
+          y="200"
+          width="80.698"
+          height="100"
+          ry="4.1723e-6"
+        />        </clipPath>
+      </defs>
+  <path d="m24.946 272.05h49.893" fill="none" stroke-width=".26458px" />
+  <g fill="none" clip-path="url(#cut-off-bottom)">
+   <path
+        transform="rotate(-68.079)"
+        d="m-207.92 126.64a25.596 25.596 0 0 1 7.4968 18.099h-25.596z"
+        stroke-linejoin="round"
+        stroke-opacity=".98824"
+        stroke-width=".33914"
+        style="paint-order:normal"
+      />
+   <path
+        transform="matrix(1.2798 0 0 1.2798 -13.959 -60.284)"
+        d="m42.802 236.53c0.29698-5e-3 0.63194-0.0116 1.1125 0.14011 0.48061 0.15173 1.5259 0.72178 1.8209 0.43121 0.29499-0.29058 1.1981-1.4422 1.4922-1.3671 0.29405 0.0751 1.225 0.56648 1.3711 0.42752 0.14611-0.13895 0.45996-0.57726 0.80948-0.67605 0.34952-0.0988 0.93854-0.10781 1.3614-0.12142 0.42288-0.0136 0.79066-0.0364 1.0702-0.0392 0.27958-3e-3 0.62924 9e-3 1.0528 0.0342 0.42356 0.0252 1.0062 0.0703 1.3573 0.20603s0.68888 0.42487 0.9894 0.52292c0.30052 0.0981 0.65857 0.0925 0.91048 0.12922 0.25192 0.0367 0.52143 0.20381 0.59338 0.24841"
+        stroke-width=".26458px"
+      />
+   <circle
+        cx="47.368"
+        cy="246.99"
+        r="2.1609"
+        stroke-linejoin="round"
+        stroke-opacity=".98824"
+        stroke-width=".33914"
+        style="paint-order:normal"
+      />
+   <ellipse
+        cx="53.445"
+        cy="245.36"
+        rx="2.2085"
+        ry="2.0574"
+        stroke-linejoin="round"
+        stroke-opacity=".98824"
+        stroke-width=".33455"
+        style="paint-order:normal"
+      />
+   <circle
+        cx="50.83"
+        cy="252.57"
+        r="2.1609"
+        stroke-linejoin="round"
+        stroke-opacity=".98824"
+        stroke-width=".33914"
+        style="paint-order:normal"
+      />
+      <!--animateMotion dur="10s" repeatCount="indefinite"
+      path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" /-->
   </g>
-  <rect x="10.961" y="272.05" width="80.698" height="36.286" ry="4.1723e-6" stroke-linejoin="round" stroke-opacity=".98824" stroke-width=".265" style="paint-order:normal"/>
+  
  </g>
 </svg>
