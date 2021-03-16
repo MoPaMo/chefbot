@@ -23,8 +23,13 @@
             <circle cx="47.368" cy="246.99" r="2.1609" stroke-linejoin="round" stroke-opacity=".98824" stroke-width=".33914" style="paint-order:normal" />
             <ellipse cx="53.445" cy="245.36" rx="2.2085" ry="2.0574" stroke-linejoin="round" stroke-opacity=".98824" stroke-width=".33455" style="paint-order:normal" />
             <circle cx="50.83" cy="252.57" r="2.1609" stroke-linejoin="round" stroke-opacity=".98824" stroke-width=".33914" style="paint-order:normal" />
-            <!--animateMotion dur="10s" repeatCount="indefinite"
-      path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" /-->
+            <animateTransform attributeName="transform"
+            attributeType="XML"
+            type="translate"
+            from="50 200"
+            to="80 270"
+            dur="10s"
+            repeatCount="indefinite"/>
         </g>
 
     </g>
