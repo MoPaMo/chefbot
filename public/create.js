@@ -37,6 +37,23 @@ let vm = new Vue({
     send: function () {
       if (this.name && this.colOne.length && this.author) {
       this.sending = true;
+      console.log(1)
+      axios.post('/api/create', {
+        name: this.name,
+        author:this.author,
+        steps:this.colOne,
+        ingr:this.list
+      })
+      .then(function (response) {
+      console.log(2)
+      open(response.data.url, "_SELF")
+      })
+      .catch(function (error) {
+      console.log(3)
+
+        alert("An error ocurred while uploading your data, please try again\n(${error})")
+        this.sending=false
+      });
       }
     },
   },
