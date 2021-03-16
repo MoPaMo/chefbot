@@ -63,8 +63,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="-78.538314"
-     inkscape:cy="295.75864"
+     inkscape:cx="28.048369"
+     inkscape:cy="121.47293"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -171,5 +171,14 @@
          id="path918-6"
          style="opacity:1;fill:none;fill-opacity:0.01610712;fill-rule:nonzero;stroke:#000000;stroke-width:0.33914053;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98823529;paint-order:normal" />
     </g>
+    <rect
+       style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.26499999;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.98823529;paint-order:normal"
+       id="rect831"
+       width="80.697914"
+       height="36.285713"
+       x="10.961309"
+       y="272.05356"
+       ry="4.1723201e-06"
+       mask="none" />
   </g>
 </svg>
