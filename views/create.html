@@ -52,19 +52,20 @@
     <a class="skip-link" href="/accessible/create.html"
       >Go over to accessible page</a
     >
-    <main id="app" class="p-2">
+    <main id="app" class="p-2"><button v-on:click="greet">Greet</button>
+
       <div
-      v-if="sending"
-      class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none z-20"
-    >
-      <div class="text-lg">Uploading recipe…</div>
-      <br />Please wait a second, you'll be redirected to the new recipe soon…
-      <hr />
-      <br />Your steps:
-      <ul>
-        <li v-for="r in colOne">{{r.text}}</li>
-      </ul>
-    </div>
+        v-if="sending"
+        class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none z-20"
+      >
+        <div class="text-lg">Uploading recipe…</div>
+        <br />Please wait a second, you'll be redirected to the new recipe soon…
+        <hr />
+        <br />Your steps:
+        <ul>
+          <li v-for="r in colOne">{{r.text}}</li>
+        </ul>
+      </div>
       <div
         v-if="!loadfinish"
         class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none z-40"
@@ -72,80 +73,85 @@
         <div class="text-lg">Loading Formulator</div>
         <br />Please wait a second…
       </div>
-      
-      <div v-if="loadfinish&&!sending">
-      <section>
-        <h1 class="text-2xl">Name</h1>
-        <input type="text" class="p-1 text-lg" v-model="name" id="name" />
-      </section>
 
-      <section class="mb-2 mt-2">
-        <h2 class="text-2xl">Steps</h2>
-        <ul v-if="colOne.length!=0" class="container bg-gray-200">
-          <!-- with click -->
-          <li
-            v-for="item,i in colOne"
-            class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-gray-300 bg-gray-400 p-2 stepgrid"
-          >
-            {{item.text}} <edit @click.native="alert('coming soon!')"></edit
-            ><trash @click.native="remove(i)"></trash>
-            <move @click.native="alert('coming soon!')"></move>
-          </li>
-        </ul>
-        <div v-else class="p-2 text-lg bg-gray-200">
-          Nothing here yet…<br /><sub>(Add steps below)</sub>
-        </div>
-        <div class="addpointgrid mt-2">
+      <div v-if="loadfinish&&!sending">
+        <section>
+          <h1 class="text-2xl">Name</h1>
+          <input type="text" class="p-1 text-lg" v-model="name" id="name" />
+        </section>
+        <section class="mb-2 mt-2">
+          <h2 class="text-2xl">Steps</h2>
+          <ul v-if="colOne.length!=0" class="container bg-gray-200">
+            <!-- with click -->
+            <li
+              v-for="item,i in colOne"
+              class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-gray-300 bg-gray-400 p-2 stepgrid"
+            >
+              {{item.text}} <edit @click.native="alert('coming soon!')"></edit
+              ><trash @click.native="remove(i)"></trash>
+              <move @click.native="alert('coming soon!')"></move>
+            </li>
+          </ul>
+          <div v-else class="p-2 text-lg bg-gray-200">
+            Nothing here yet…<br /><sub>(Add steps below)</sub>
+          </div>
+          <div class="addpointgrid mt-2">
+            <input
+              v-model="addtext"
+              type="text"
+              class="rounded-lg bg-opacity-25 bg-gray-200 p-2"
+              @keydown.enter="vm.greet"
+            />
+            <button
+              @click="vm.greet"
+              class="place-self-center w-full transition hover:text-green-600 focus:outline-none"
+            >
+              <plus></plus>
+            </button>
+          </div>
+        </section>
+        <hr />
+        <section class="mb-2 mt-2">
+          <h2 class="text-2xl">Ingredients</h2>
+          <div v-if="list.length"><div v-for="ingr in list">{{ingr}}</div></div>
+          <div v-else class="p-2 text-lg bg-gray-200">
+            Nothing here yet…<br /><sub>(Add steps below)</sub>
+          </div>
+          <div class="addpointgrid">
+            <input
+              v-model="listin"
+              type="text"
+              class="rounded-lg bg-opacity-25 bg-gray-200 p-2"
+              placeholder="Ingridients"
+              @keydown.enter="if(listin.trim())list.push(listin)"
+            />
+            <button
+              @click="if(listin.trim())list.push(listin)"
+              class="place-self-center w-full transition hover:text-green-600 focus:outline-none"
+            >
+              <plus class="place-self-center"></plus>
+            </button>
+          </div>
+        </section>
+        <section>
+          <h2 class="text-2xl">Ready?</h2>
+          <label for="aut">What's your name?</label>
           <input
-            v-model="addtext"
             type="text"
+            v-model="author"
             class="rounded-lg bg-opacity-25 bg-gray-200 p-2"
-            @keydown.enter="write"
-          />
-          <button
-            @click="write"
-            class="place-self-center w-full transition hover:text-green-600 focus:outline-none"
-          >
-            <plus></plus>
-          </button>
-        </div>
-      </section>
-      <hr />
-      <section class="mb-2 mt-2">
-        <h2 class="text-2xl">Ingredients</h2>
-        <div v-if="list.length"><div v-for="ingr in list">{{ingr}}</div></div>
-        <div v-else class="p-2 text-lg bg-gray-200">
-          Nothing here yet…<br /><sub>(Add steps below)</sub>
-        </div>
-        <div class="addpointgrid">
-          <input
-            v-model="listin"
-            type="text"
-            class="rounded-lg bg-opacity-25 bg-gray-200 p-2"
-            placeholder="Ingridients"
-            @keydown.enter="if(listin.trim())list.push(listin)"
-          />
-          <button
-            @click="if(listin.trim())list.push(listin)"
-            class="place-self-center w-full transition hover:text-green-600 focus:outline-none"
-          >
-            <plus class="place-self-center"></plus>
-          </button>
-        </div>
-      </section>
-      <section>
-        <h2 class="text-2xl">Ready?</h2>
-        <label for="aut">What's your name?</label>
-        <input
-          type="text"
-          v-model="author"
-          class="rounded-lg bg-opacity-25 bg-gray-200 p-2"
-          id="aut"
-        /><br />
-        <button @click="send" class="bg-blue-500 p-2 rounded">
-          Finish & Send recipe
+            id="aut"
+          /><br />
+          <button @click="send" class="bg-blue-500 p-2 rounded">
+            Finish & Send recipe
+          </button><button
+          @click="send"
+          class="place-self-center w-full transition hover:text-green-600 focus:outline-none"
+        >
+          <plus></plus>
         </button>
-      </section></div>
+        </section>
+      </div>
 
       <!--/div-->
     </main>
