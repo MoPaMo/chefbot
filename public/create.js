@@ -35,7 +35,7 @@ let vm = new Vue({
     ingwrite: function () {
       if (this.listin.trim()) {
         this.list.push(this.listin);
-this.listin=""
+        this.listin = "";
       }
     },
     send: function () {
