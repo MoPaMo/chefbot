@@ -50,6 +50,9 @@ app.get("/", (request, response) => {
 app.get("/search", (request, response) => {
   response.sendFile(`${__dirname}/views/search.html`);
 });
+app.get("/new", (request, response) => {
+  response.sendFile(`${__dirname}/views/create.html`);
+});
 // endpoint to get all the dreams in the database
 app.get("/getDreams", (request, response) => {
   db.all("SELECT * from Dreams", (err, rows) => {
