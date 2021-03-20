@@ -51,7 +51,7 @@ let vm = new Vue({
       console.log("3");
 
         alert("An error ocurred while uploading your data, please try again \n ("+error+")");
-        vm.sending=false;
+        this.sending=false;
       });
       }else{alert("PLEASE FILL ALL FIELDS")}
     },
