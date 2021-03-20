@@ -52,8 +52,7 @@
     <a class="skip-link" href="/accessible/create.html"
       >Go over to accessible page</a
     >
-    <main id="app" class="p-2"><button v-on:click="greet">Greet</button>
-
+    <main id="app" class="p-2">
       <div
         v-if="sending"
         class="absolute top-0 left-0 h-full w-full bg-green-200 text-center block cursor-wait select-none z-20"
@@ -61,7 +60,7 @@
         <div class="text-lg">Uploading recipe…</div>
         <br />Please wait a second, you'll be redirected to the new recipe soon…
         <hr />
-        <br />Your steps:
+        <br />Your steps:{{sending}}
         <ul>
           <li v-for="r in colOne">{{r.text}}</li>
         </ul>
@@ -100,10 +99,10 @@
               v-model="addtext"
               type="text"
               class="rounded-lg bg-opacity-25 bg-gray-200 p-2"
-              @keydown.enter="vm.greet"
+              @keydown.enter="write"
             />
             <button
-              @click="vm.greet"
+              @click="write"
               class="place-self-center w-full transition hover:text-green-600 focus:outline-none"
             >
               <plus></plus>
@@ -157,6 +156,6 @@
     </main>
     <script src="../public/vue.min.js"></script>
     <script src="../public/axios.min.js"></script>
-    <script src="../public/create.min.js"></script>
+    <script src="../public/create.js"></script>
   </body>
 </html>
