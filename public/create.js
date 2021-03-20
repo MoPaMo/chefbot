@@ -26,34 +26,46 @@ let vm = new Vue({
     author: "",
   },
   methods: {
-
     write: function () {
       if (this.addtext.trim() != "") {
         this.colOne.push({ text: this.addtext });
         this.addtext = "";
       }
     },
+    ingwrite: function () {
+      if (this.listin.trim()) {
+        this.list.push(this.listin);
+this.listin=""
+      }
+    },
     send: function () {
       if (this.name && this.colOne.length && this.author) {
         console.log("1");
-      this.sending = true;
-      axios.post('/api/create', {
-        name: this.name,
-        author:this.author,
-        steps:this.colOne,
-        ingr:this.list
-      })
-      .then(function (response) {
-      console.log("2");
-      open(response.data.url, "_SELF")
-      })
-      .catch(function (error) {
-      console.log("3");
+        this.sending = true;
+        axios
+          .post("/api/create", {
+            name: this.name,
+            author: this.author,
+            steps: this.colOne,
+            ingr: this.list,
+          })
+          .then(function (response) {
+            console.log("2");
+            open(response.data.url, "_SELF");
+          })
+          .catch(function (error) {
+            console.log("3");
 
-        alert("An error ocurred while uploading your data, please try again \n ("+error+")");
-        this.sending=false;
-      });
-      }else{alert("PLEASE FILL ALL FIELDS")}
+            alert(
+              "An error ocurred while uploading your data, please try again \n (" +
+                error +
+                ")"
+            );
+            this.sending = false;
+          });
+      } else {
+        alert("PLEASE FILL ALL FIELDS");
+      }
     },
   },
   watch: {

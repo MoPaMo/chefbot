@@ -122,10 +122,10 @@
               type="text"
               class="rounded-lg bg-opacity-25 bg-gray-200 p-2"
               placeholder="Ingridients"
-              @keydown.enter="if(listin.trim())list.push(listin)"
+              @keydown.enter="ingwrite"
             />
             <button
-              @click="if(listin.trim())list.push(listin)"
+              @click="ingwrite"
               class="place-self-center w-full transition hover:text-green-600 focus:outline-none"
             >
               <plus class="place-self-center"></plus>
