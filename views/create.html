@@ -112,7 +112,7 @@
         <hr />
         <section class="mb-2 mt-2">
           <h2 class="text-2xl">Ingredients</h2>
-          <div v-if="list.length"><div v-for="ingr in list">{{ingr}}</div></div>
+          <div v-if="list.length"><div class="dark:odd:bg-blue-500 dark:bg-blue-600 odd:bg-gray-300 bg-gray-400 p-2 " v-for="ingr in list">{{ingr}}</div></div>
           <div v-else class="p-2 text-lg bg-gray-200">
             Nothing here yet…<br /><sub>(Add steps below)</sub>
           </div>
